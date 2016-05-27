@@ -5,8 +5,12 @@ $(() => {
   let token = null
   let user = null
 
+  const clearTable = () => {
+    $('tbody').html('')
+  }
+
   const addItemToTable = (item, id) => {
-    const row = `<tr data-id="${id}">
+    var row = `<tr data-id="${id}">
       <td class='grab'>${item.task}</td>
       <td>
         <button class="btn btn-success complete">Complete</button>
@@ -22,7 +26,6 @@ $(() => {
   const getData = function () {
     $.get(`${API_URL}/${user}/task.json?auth=${token}`)
     .done((data) => {
-      console.log(data)
       if (data) {
 
         Object.keys(data).forEach((id) => {
@@ -67,6 +70,7 @@ $(() => {
       data: JSON.stringify({ task: targ, status: 'complete'})
     })
     .done(() => {
+      clearTable()
       getData()
     })
   })
