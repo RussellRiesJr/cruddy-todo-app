@@ -1,41 +1,49 @@
-<!DOCTYPE html>
+<!doctype>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Cruddy Todo App</title>
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Cruddy Todo App</h1>
-
-    <div class="add">
-      <form class="form-inline">
-        <input class="form-control" type="text" placeholder="add a todo item">
-        <input class="btn btn-primary" type="submit">
-      </form>
-    </div>
-    <div class="index">
-      <table>
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Make a todo list</td>
-            <td>
-              <button class="btn btn-success">Complete</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="container">
+      <h1>Cruddy Todo App</h1>
+      <div class="login">
+        <form>
+          <input class="form-control" type="text" placeholder="user@example.com">
+          <input class="form-control" type="password" placeholder="P@s$w0rD">
+          <input class="btn btn-warning" type="button" value="Register">
+          <input class="btn btn-primary" type="submit" value="Login">
+        </form>
+      </div>
+      <div class="app">
+        <div>
+          Logged in as: <span class="logged_in_user"></span>
+          <button class="logout btn btn-danger">Logout</button>
+        </div>
+        <div class="add">
+          <form class="form-inline">
+            <input class="form-control" id="newItem" type="text" placeholder="add a todo item">
+            <input class="btn btn-primary" type="submit">
+          </form>
+        </div>
+        <div class="index">
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Actions</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/firebase/firebase.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
